@@ -7,8 +7,11 @@ def budget_manager(amount):
             budget += money
             print(f"add: {money},budget: {budget}")
         elif action == "spend":
-            budget -= money
-            print(f"spend: {money},budget: {budget}")
+            if budget < money:
+                print("the budget is less than you want")
+            else:
+                budget -= money
+                print(f"spend: {money},budget: {budget}")
         elif action == "get":
             print(f"the budget is : {budget}")
         else:
@@ -19,5 +22,5 @@ def budget_manager(amount):
 my_budget = budget_manager(1000)
 my_budget("get")
 my_budget("add", 1000)
-my_budget("spend", 500)
+my_budget("spend", 5000)
 my_budget("get")
